@@ -16,6 +16,7 @@ Should return
  ( as a string )
 
 """
+
 import unittest
 from string import ascii_lowercase
 
