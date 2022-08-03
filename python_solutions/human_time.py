@@ -48,6 +48,11 @@ class TestSolution(unittest.TestCase):
         self.assertTrue(result, "00:01:02")
 
     def test2(self):
+        test_input = 359999
+        result = human_time_converter(seconds=test_input)
+        self.assertTrue(result, "99:59:59")
+
+    def test3(self):
         test_input = 360000
         result = human_time_converter(seconds=test_input)
         self.assertFalse(result)
