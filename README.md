@@ -9,4 +9,5 @@ CodeWars - Solutions with Python
 5) recursive factorial calculation
 6) reverse words
 7) most frequent array item
+8) price converter
 
