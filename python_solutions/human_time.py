@@ -32,10 +32,7 @@ def human_time_converter(seconds: int):
     :return: human-readable time as string
     :rtype: str
     """
-    if seconds <= 359999:
-        return f"{(seconds//3600):02d}:{(seconds // 60 % 60):02d}:{(seconds % 60):02d}"
-    else:
-        return False
+    return f"{(seconds//3600):02d}:{(seconds // 60 % 60):02d}:{(seconds % 60):02d}" if seconds <= 359999 else False
 
 
 class TestSolution(unittest.TestCase):

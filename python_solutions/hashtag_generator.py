@@ -30,10 +30,7 @@ def hashtag_generator(phrase: str):
     :return: Hashtag word
     :rtype: str
     """
-    result = "#"
-    for i in phrase.split():
-        result += i.capitalize()
-    return result if phrase else False
+    return '#' + ''.join(i.capitalize() for i in phrase.split()) if phrase else False
 
 
 class TestSolution(unittest.TestCase):

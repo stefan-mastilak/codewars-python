@@ -28,6 +28,9 @@ def reverser(text: str):
 
 
 class TestSolution(unittest.TestCase):
+    """
+    Test solution
+    """
     def test1(self):
         test_input = "This is an example!"
         result = reverser(text=test_input)
