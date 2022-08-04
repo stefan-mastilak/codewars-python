@@ -8,4 +8,5 @@ CodeWars - Solutions with Python
 4) players categorization
 5) recursive factorial calculation
 6) reverse words
+7) most frequent array item
 
