@@ -1,5 +1,15 @@
 # codewars-python
-CodeWars - Solutions with Python
+
+<img height="300" src="C:\Users\stefan.mastilak\Desktop\codewars1.png" width="300"/>
+
+## CodeWars - Solutions with Python
+
+This repository contains solutions writen in Python for some tasks from CodeWars.
+
+Todo: Add solutions in other languages
+
+### Setup:
+* Python 3.10
 
 ### Solutions:
 1) alphabet position
