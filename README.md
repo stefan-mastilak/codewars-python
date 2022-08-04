@@ -1,6 +1,6 @@
 # codewars-python
 
-<img height="300" src="C:\Users\stefan.mastilak\Desktop\codewars1.png" width="300"/>
+<img width="318" alt="codewars1" src="https://user-images.githubusercontent.com/74961891/182827521-cba3a615-b886-4e8d-a345-5647e6a82999.png">
 
 ## CodeWars - Solutions with Python
 
