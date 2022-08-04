@@ -20,4 +20,5 @@ Todo: Add solutions in other languages
 6) reverse words
 7) most frequent array item
 8) price converter
+9) frame creator
 
