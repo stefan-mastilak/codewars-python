@@ -34,7 +34,8 @@ def frame(words: list, delimiter: str):
     NOTE: The biggest string inside the array should always fit in the frame.
     :param words: list of words to be framed
     :param delimiter: border delimiter character
-    :return:
+    :return: framed words
+    :rtype: str
     """
     max_word = max(words, key=len)
     max_width = len(max_word) + 2 + 2 * len(delimiter)
@@ -49,21 +50,24 @@ def frame(words: list, delimiter: str):
 
 
 class TestSolution(unittest.TestCase):
+    """
+    Test solution
+    """
     def test1(self):
-        result = frame(words=['Create', 'another', 'frame'], delimiter='****')
-        self.assertEqual(result, "*****************\n"
-                                 "**** Create  ****\n"
-                                 "**** another ****\n"
-                                 "**** frame   ****\n"
-                                 "*****************")
-
-    def test2(self):
         result = frame(words=['Create', 'a', 'frame'], delimiter='*')
         self.assertEqual(result, "**********\n"
                                  "* Create *\n"
                                  "* a      *\n"
                                  "* frame  *\n"
                                  "**********")
+
+    def test2(self):
+        result = frame(words=['Create', 'another', 'frame'], delimiter='****')
+        self.assertEqual(result, "*****************\n"
+                                 "**** Create  ****\n"
+                                 "**** another ****\n"
+                                 "**** frame   ****\n"
+                                 "*****************")
 
 
 if __name__ == "__main__":
