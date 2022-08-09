@@ -21,4 +21,5 @@ Todo: Add solutions in other languages
 7) most frequent array item
 8) price converter
 9) frame creator
+10) likes system
 

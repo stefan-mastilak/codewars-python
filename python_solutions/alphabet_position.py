@@ -10,10 +10,8 @@ If anything in the text isn't a letter, ignore it and don't return it.
 
 Example:
 --------
-alphabet_position("The sunset sets at twelve o' clock.")
-Should return
-"20 8 5 19 21 14 19 5 20 19 5 20 19 1 20 20 23 5 12 22 5 15 3 12 15 3 11"
- ( as a string )
+input >> alphabet_position("The sunset sets at twelve o' clock.")
+output >> "20 8 5 19 21 14 19 5 20 19 5 20 19 1 20 20 23 5 12 22 5 15 3 12 15 3 11"
 
 """
 
@@ -21,7 +19,7 @@ import unittest
 from string import ascii_lowercase
 
 
-def get_position(text: str):
+def alphabet_position(text: str):
     """
     Function will return string with alphabet position of the letters in text
     :param text: input string
@@ -41,7 +39,7 @@ class TestSolution(unittest.TestCase):
         Test solution
         """
         test_string = "The sunset sets at twelve o' clock."
-        result = get_position(text=test_string)
+        result = alphabet_position(text=test_string)
         self.assertEqual(result, "20 8 5 19 21 14 19 5 20 19 5 20 19 1 20 20 23 5 12 22 5 15 3 12 15 3 11")
 
 

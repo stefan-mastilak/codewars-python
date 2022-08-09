@@ -28,20 +28,20 @@ Output:
 import unittest
 
 
-def frame(words: list, delimiter: str):
+def frame(words: list, delim: str):
     """
     Function that will create frame around the given list of words.
     NOTE: The biggest string inside the array should always fit in the frame.
     :param words: list of words to be framed
-    :param delimiter: border delimiter character
+    :param delim: border delimiter character
     :return: framed words
     :rtype: str
     """
     max_word = max(words, key=len)
-    max_width = len(max_word) + 2 + 2 * len(delimiter)
-    header = ''.join(delimiter * max_width)[:max_width]
-    result = [f"{delimiter} {i} {delimiter}" if i == max_word
-              else f"{delimiter} {i} " + " " * (len(max_word) - len(i)) + delimiter
+    max_width = len(max_word) + 2 + 2 * len(delim)
+    header = ''.join(delim * max_width)[:max_width]
+    result = [f"{delim} {i} {delim}" if i == max_word
+              else f"{delim} {i} " + " " * (len(max_word) - len(i)) + delim
               for i in words]
     result.insert(0, header)
     result.append(header)
@@ -54,7 +54,7 @@ class TestSolution(unittest.TestCase):
     Test solution
     """
     def test1(self):
-        result = frame(words=['Create', 'a', 'frame'], delimiter='*')
+        result = frame(words=['Create', 'a', 'frame'], delim='*')
         self.assertEqual(result, "**********\n"
                                  "* Create *\n"
                                  "* a      *\n"
@@ -62,7 +62,7 @@ class TestSolution(unittest.TestCase):
                                  "**********")
 
     def test2(self):
-        result = frame(words=['Create', 'another', 'frame'], delimiter='****')
+        result = frame(words=['Create', 'another', 'frame'], delim='****')
         self.assertEqual(result, "*****************\n"
                                  "**** Create  ****\n"
                                  "**** another ****\n"

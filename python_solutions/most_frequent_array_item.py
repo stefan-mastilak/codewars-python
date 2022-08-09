@@ -11,7 +11,7 @@ For an empty array return 0
 Example:
 --------
 input array: [3, -1, -1, -1, 2, 3, -1, 3, -1, 2, 4, 9, 3]
-output: 5
+output: 5 (because -1 is the most frequent item of the given array, and it occurs 5 times)
 
 """
 
@@ -38,9 +38,9 @@ class TestSolution(unittest.TestCase):
         self.assertEqual(result, 5)
 
     def test2(self):
-        test_input = [4, 0, 0, -1, 12, 3, -1, 3, 0, 2, 4, 9, 3]
+        test_input = [4, 0, 0, -1, 12, 3, -1, 3, 0, 2, 0, 9, 2]
         result = most_frequent_item(inp=test_input)
-        self.assertEqual(result, 3)
+        self.assertEqual(result, 4)
 
 
 if __name__ == '__main__':

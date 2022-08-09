@@ -9,14 +9,15 @@ Let's help them with our own Hashtag Generator!
 Here's the deal:
 It must start with a hashtag (#).
 All words must have their first letter capitalized.
-If the final result is longer than 140 chars it must return false.
-If the input or the result is an empty string it must return false.
+If the final result is longer than 40 chars it must return False.
+If the input or the result is an empty string it must return False.
 
 Examples:
 ---------
-" Hello there thanks for trying my Kata"  =>  "#HelloThereThanksForTryingMyKata"
-"    Hello     World   "                  =>  "#HelloWorld"
-""                                        =>  false
+" Hello there thanks for trying my Phrase"            =>  "#HelloThereThanksForTryingMyPhrase"
+"    Hello     World   "                              =>  "#HelloWorld"
+""                                                    =>  False
+"This should return false because input is too long"  =>  False
 
 """
 
@@ -30,7 +31,8 @@ def hashtag_generator(phrase: str):
     :return: Hashtag word
     :rtype: str
     """
-    return '#' + ''.join(i.capitalize() for i in phrase.split()) if phrase else False
+    tag = '#' + ''.join(i.capitalize() for i in phrase.split())
+    return tag if phrase and len(tag) <= 40 else False
 
 
 class TestSolution(unittest.TestCase):
@@ -38,9 +40,9 @@ class TestSolution(unittest.TestCase):
     Test solution
     """
     def test1(self):
-        test_phrase = " Hello there thanks for trying my Kata"
+        test_phrase = " Hello there thanks for trying my Phrase"
         result = hashtag_generator(phrase=test_phrase)
-        self.assertEqual(result, "#HelloThereThanksForTryingMyKata")
+        self.assertEqual(result, "#HelloThereThanksForTryingMyPhrase")
 
     def test2(self):
         test_phrase = "    Hello     World   "
@@ -49,6 +51,11 @@ class TestSolution(unittest.TestCase):
 
     def test3(self):
         test_phrase = ""
+        result = hashtag_generator(phrase=test_phrase)
+        self.assertFalse(result)
+
+    def test4(self):
+        test_phrase = "This should return false because input is too long"
         result = hashtag_generator(phrase=test_phrase)
         self.assertFalse(result)
 
