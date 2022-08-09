@@ -5,12 +5,14 @@
 Task definition:
 -----------------
 Complete the function that accepts a string parameter, and reverses each word in the string.
-All spaces in the string should be retained.
+- All spaces in the string should be retained.
+- Return False if empty string passed in
 
 Example:
 --------
 "This is an example!" ==> "sihT si na !elpmaxe"
-"double  spaces"      ==> "elbuod  secaps"
+"Double  spaces"      ==> "elbuoD  secaps"
+""                    ==> False
 
 """
 
@@ -24,7 +26,7 @@ def reverser(text: str):
     :return: reversed text
     :rtype: str
     """
-    return ' '.join(i[::-1] for i in text.split(' '))
+    return ' '.join(i[::-1] for i in text.split(' ')) if text else False
 
 
 class TestSolution(unittest.TestCase):
@@ -37,14 +39,19 @@ class TestSolution(unittest.TestCase):
         self.assertEqual(result, "sihT si na !elpmaxe")
 
     def test2(self):
-        test_input = "double  spaces"
+        test_input = "Double  spaces"
         result = reverser(text=test_input)
-        self.assertEqual(result, "elbuod  secaps")
+        self.assertEqual(result, "elbuoD  secaps")
 
     def test3(self):
         test_input = " multiple    spaces   "
         result = reverser(text=test_input)
         self.assertEqual(result, " elpitlum    secaps   ")
+
+    def test4(self):
+        test_input = ""
+        result = reverser(text=test_input)
+        self.assertFalse(result)
 
 
 if __name__ == '__main__':

@@ -39,9 +39,19 @@ class TestSolution(unittest.TestCase):
         self.assertEqual(result, "20 8 5 19 21 14 19 5 20 19 5 20 19 1 20 20 23 5 12 22 5 15 3 12 15 3 11")
 
     def test2(self):
-        test_string = "'012 * bb*-"
+        test_string = "'012 * bb*- k"
         result = alphabet_position(text=test_string)
-        self.assertEqual(result, "2 2")
+        self.assertEqual(result, "2 2 11")
+
+    def test3(self):
+        test_string = "'*--++//'"
+        result = alphabet_position(text=test_string)
+        self.assertEqual(result, "")
+
+    def test4(self):
+        test_string = "*Pineapple* *pizza's* *the* *best!*"
+        result = alphabet_position(text=test_string)
+        self.assertEqual(result, "16 9 14 5 1 16 16 12 5 16 9 26 26 1 19 20 8 5 2 5 19 20")
 
 
 if __name__ == "__main__":

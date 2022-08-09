@@ -6,11 +6,12 @@ Task definition:
 -----------------
 The marketing team is spending way too much time typing in hashtags.
 Let's help them with our own Hashtag Generator!
+
 Here's the deal:
-It must start with a hashtag (#).
-All words must have their first letter capitalized.
-If the final result is longer than 40 chars it must return False.
-If the input or the result is an empty string it must return False.
+- It must start with a hashtag (#).
+- All words must have their first letter capitalized.
+- If the final result is longer than 40 chars it must return False.
+- If the input or the result is an empty string it must return False.
 
 Examples:
 ---------
