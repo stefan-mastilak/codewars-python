@@ -26,12 +26,10 @@ def factorial(n):
     :param n: number
     :return: factorial of n
     """
-    if n < 0:
-        return False
-    elif n in (0, 1):
+    if n in (0, 1):
         return 1
     else:
-        return n * factorial(n - 1)
+        return n * factorial(n - 1) if n > 0 else False
 
 
 class TestSolution(unittest.TestCase):
