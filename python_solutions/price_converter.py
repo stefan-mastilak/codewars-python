@@ -18,6 +18,7 @@ Example:
 --------
 3 needs to become $3.00
 3.1 needs to become $3.10
+7.126 needs to become $7.13
 
 """
 import unittest
@@ -30,9 +31,8 @@ def price_converter(price: float):
     :return: converted price
     :rtype: str
     """
-
-    return '$' + str(float(price)) if len(str(float(price)).split('.')[-1]) > 1 \
-        else '$' + str(float(price)) + '0'
+    price = round(float(price), 2)
+    return '$' + str(price) if len(str(price).split('.')[-1]) > 1 else '$' + str(price) + '0'
 
 
 class TestSolution(unittest.TestCase):
@@ -45,9 +45,24 @@ class TestSolution(unittest.TestCase):
         self.assertEqual(result, '$4.00')
 
     def test2(self):
-        test_input = 0.50
+        test_input = 0.5
         result = price_converter(price=test_input)
         self.assertEqual(result, '$0.50')
+
+    def test3(self):
+        test_input = 0
+        result = price_converter(price=test_input)
+        self.assertEqual(result, '$0.00')
+
+    def test4(self):
+        test_input = 7.126
+        result = price_converter(price=test_input)
+        self.assertEqual(result, '$7.13')
+
+    def test5(self):
+        test_input = 25.102
+        result = price_converter(price=test_input)
+        self.assertEqual(result, '$25.10')
 
 
 if __name__ == '__main__':
