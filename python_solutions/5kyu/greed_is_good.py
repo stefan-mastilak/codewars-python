@@ -34,7 +34,7 @@ import unittest
 
 def dice_score(throw: list):
     """
-    Evaluate dice throw and return score as an integer
+    Evaluate dice throw and return score as an integer.
     :param throw: list of five six-sided dice values (integers)
     :return: score as integer
     :rtype: int
@@ -63,7 +63,7 @@ def dice_score(throw: list):
 
 class TestDiceSolution(unittest.TestCase):
     """
-    Test dices game scoring solution
+    Test - Dices game scoring
     """
     def test1(self):
         self.assertEqual(dice_score([5, 1, 3, 4, 1]), 250)
@@ -83,3 +83,6 @@ class TestDiceSolution(unittest.TestCase):
     def test6(self):
         self.assertEqual(dice_score([1, 1, 5, 3, 3]), 250)
 
+
+if __name__ == '__main__':
+    unittest.main()
